@@ -27,7 +27,7 @@ button { background: coral; border: none; cursor: pointer; }
 <h2>오루씨어디가세요</h2>
 
 <select id="place1">
-  <option value="">첫 번째 장소 선택</option>
+  <option value="">오늘의 첫 번째 공연은 어디서..</option>
   <option>놀씨어터</option><option>링아센</option><option>링아센드림</option>
   <option>예사스</option><option>티오엠</option><option>유플</option>
   <option>서경</option><option>플러스</option><option>링스페</option>
@@ -40,7 +40,7 @@ button { background: coral; border: none; cursor: pointer; }
 </select>
 <br>
 <select id="place2">
-  <option value="">두 번째 장소 선택 (선택사항)</option>
+  <option value="">공연을또본다고?(선택사항)</option>
   <option>놀씨어터</option><option>링아센</option><option>링아센드림</option>
   <option>예사스</option><option>티오엠</option><option>유플</option>
   <option>서경</option><option>플러스</option><option>링스페</option>
@@ -59,16 +59,16 @@ function makeSentence() {
   const p1 = document.getElementById("place1").value;
   const p2 = document.getElementById("place2").value;
   if (!p1) {
-    alert("그래도한곳이상은가겟지..");
+    alert("그래도하나이상은보겟지..");
     return;
   }
   if (p1 === p2 && p2 !== "") {
-    alert("설마같은극을또보시나요?");
+    alert("설마연속으로같은극을관람하시나요?");
     return;
   }
   let sentence = "오늘은 " + p1;
   if (p2) sentence += ", " + p2;
-  sentence += "에 가는 날입니다";
+  sentence += "에 가는 날입니다!";
   document.getElementById("result").innerText = sentence;
 }
 </script>
