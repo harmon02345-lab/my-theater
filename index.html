@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘은 어디 가는 날?</title>
+<style>
+body {
+  background: #111;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 40px 15px;
+}
+select, button {
+  padding: 12px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+select { background: white; color: black; }
+button { background: coral; border: none; cursor: pointer; }
+#result { margin-top: 30px; font-size: 23px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<h2>오늘은 어디 가는 날?</h2>
+<p>가고 싶은 장소를 1~2개 선택해 줘!</p>
+
+<select id="place1">
+  <option value="">첫 번째 장소 선택</option>
+  <option>놀씨어터</option><option>링아센</option><option>링아센드림</option>
+  <option>예사스</option><option>티오엠</option><option>유플</option>
+  <option>서경</option><option>플러스</option><option>링스페</option>
+  <option>아트원</option><option>정동</option><option>홍아센</option>
+  <option>충아센</option><option>엘아센</option><option>샤롯데</option>
+  <option>블퀘</option><option>예당</option><option>광림</option>
+  <option>세종</option><option>해오름</option><option>지에스</option>
+  <option>아티움</option><option>연강홀</option><option>디큐브</option>
+  <option>성아센</option>
+</select>
+<br>
+<select id="place2">
+  <option value="">두 번째 장소 선택 (선택사항)</option>
+  <option>놀씨어터</option><option>링아센</option><option>링아센드림</option>
+  <option>예사스</option><option>티오엠</option><option>유플</option>
+  <option>서경</option><option>플러스</option><option>링스페</option>
+  <option>아트원</option><option>정동</option><option>홍아센</option>
+  <option>충아센</option><option>엘아센</option><option>샤롯데</option>
+  <option>블퀘</option><option>예당</option><option>광림</option>
+  <option>세종</option><option>해오름</option><option>지에스</option>
+  <option>아티움</option><option>연강홀</option><option>디큐브</option>
+  <option>성아센</option>
+</select>
+<br>
+<button onclick="makeSentence()">선택 완료!</button>
+<div id="result"></div>
+<script>
+function makeSentence() {
+  const p1 = document.getElementById("place1").value;
+  const p2 = document.getElementById("place2").value;
+  if (!p1) {
+    alert("장소를 하나 이상 선택해 줘!");
+    return;
+  }
+  if (p1 === p2 && p2 !== "") {
+    alert("같은 장소는 중복 선택할 수 없어!");
+    return;
+  }
+  let sentence = "오늘은 " + p1;
+  if (p2) sentence += ", " + p2;
+  sentence += "에 가는 날입니다!";
+  document.getElementById("result").innerText = sentence;
+}
+</script>
+</body>
+</html>
