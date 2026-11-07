@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>오늘은 어디 가는 날?</title>
+<title>오루씨어디가세요</title>
 <style>
 body {
   background: #111;
@@ -24,8 +24,7 @@ button { background: coral; border: none; cursor: pointer; }
 </style>
 </head>
 <body>
-<h2>오늘은 어디 가는 날?</h2>
-<p>가고 싶은 장소를 1~2개 선택해 줘!</p>
+<h2>오루씨어디가세요</h2>
 
 <select id="place1">
   <option value="">첫 번째 장소 선택</option>
@@ -53,23 +52,23 @@ button { background: coral; border: none; cursor: pointer; }
   <option>성아센</option>
 </select>
 <br>
-<button onclick="makeSentence()">선택 완료!</button>
+<button onclick="makeSentence()">선택 완료</button>
 <div id="result"></div>
 <script>
 function makeSentence() {
   const p1 = document.getElementById("place1").value;
   const p2 = document.getElementById("place2").value;
   if (!p1) {
-    alert("장소를 하나 이상 선택해 줘!");
+    alert("그래도한곳이상은가겟지..");
     return;
   }
   if (p1 === p2 && p2 !== "") {
-    alert("같은 장소는 중복 선택할 수 없어!");
+    alert("설마같은극을또보시나요?");
     return;
   }
   let sentence = "오늘은 " + p1;
   if (p2) sentence += ", " + p2;
-  sentence += "에 가는 날입니다!";
+  sentence += "에 가는 날입니다";
   document.getElementById("result").innerText = sentence;
 }
 </script>
